@@ -26,9 +26,9 @@ const services = [
     icon: "🌍",
     title: "Conseil en Management de Projet",
     desc: "Mise en place de PMO, accompagnement de programmes complexes, conformité aux procédures des bailleurs internationaux.",
-    href: "#",
-    cta: "Bientôt disponible",
-    available: false,
+    href: "/conseil",
+    cta: "Découvrir le conseil",
+    available: true,
   },
 ];
 
