@@ -7,7 +7,7 @@ import { useEffect } from "react";
 // 2. Créez un type d'événement "Séance Découverte Gratuite - 30 min"
 // 3. Remplacez YOUR_CALENDLY_USERNAME ci-dessous par votre identifiant Calendly
 // ──────────────────────────────────────────────────────────────────────────────
-const CALENDLY_URL = "https://calendly.com/YOUR_CALENDLY_USERNAME/seance-decouverte";
+const CALENDLY_URL = "https://calendly.com/odieye";
 
 export default function CalendlyWidget() {
   useEffect(() => {

@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton() {
   // Remplacez par votre numéro WhatsApp international (ex: 221XXXXXXXXX pour Sénégal)
-  const phone = "221XXXXXXXXX";
+  const phone = "221781975757";
   const message = encodeURIComponent(
     "Bonjour, j'ai visité le site AXELOVA et je souhaite en savoir plus sur vos services."
   );

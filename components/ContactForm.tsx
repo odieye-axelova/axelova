@@ -33,7 +33,7 @@ export default function ContactForm({ context = "general" }: ContactFormProps) {
     // Option 2 : EmailJS — https://www.emailjs.com (gratuit jusqu'à 200 emails/mois)
     // ──────────────────────────────────────────────────────────────────────────
     try {
-      const response = await fetch("https://formspree.io/f/YOUR_FORM_ID", {
+      const response = await fetch("https://formspree.io/f/xojkoeka", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
