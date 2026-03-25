@@ -2,30 +2,61 @@
 import { useEffect } from "react";
 
 // ──────────────────────────────────────────────────────────────────────────────
-// INSTRUCTIONS DE CONFIGURATION :
-// 1. Créez un compte gratuit sur https://calendly.com
-// 2. Créez un type d'événement "Séance Découverte Gratuite - 30 min"
-// 3. Remplacez YOUR_CALENDLY_USERNAME ci-dessous par votre identifiant Calendly
+// Cal.com — Séance Découverte — Coaching Personnalisé
+// URL publique : https://cal.com/axelova/seance-decouverte
 // ──────────────────────────────────────────────────────────────────────────────
-const CALENDLY_URL = "https://calendly.com/odieye";
+const CAL_LINK = "axelova/seance-decouverte";
 
-export default function CalendlyWidget() {
+export default function CalWidget() {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
+    // Initialisation du script Cal.com
+    (function (C: any, A: string, L: string) {
+      const p = function (a: any, ar: any) { a.q.push(ar); };
+      const d = C.document;
+      C.Cal =
+        C.Cal ||
+        function () {
+          const cal = C.Cal;
+          const ar = arguments;
+          if (!cal.loaded) {
+            cal.ns = {};
+            cal.q = cal.q || [];
+            d.head.appendChild(d.createElement("script")).src = A;
+            cal.loaded = true;
+          }
+          if (ar[0] === L) {
+            const api = function () { p(api, arguments); };
+            const namespace = ar[1];
+            api.q = api.q || [];
+            typeof namespace === "string"
+              ? ((cal.ns[namespace] = api) && p(api, ar))
+              : p(cal, ar);
+            return;
+          }
+          p(cal, ar);
+        };
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+
+    const Cal = (window as any).Cal;
+    Cal("init", "seance-decouverte", { origin: "https://cal.com" });
+
+    Cal.ns["seance-decouverte"]("inline", {
+      elementOrSelector: "#cal-inline-widget",
+      config: { layout: "month_view" },
+      calLink: CAL_LINK,
+    });
+
+    Cal.ns["seance-decouverte"]("ui", {
+      hideEventTypeDetails: false,
+      layout: "month_view",
+    });
   }, []);
 
   return (
     <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
       <div
-        className="calendly-inline-widget"
-        data-url={`${CALENDLY_URL}?hide_event_type_details=1&hide_gdpr_banner=1&primary_color=c9a84c`}
-        style={{ minWidth: "320px", height: "630px" }}
+        id="cal-inline-widget"
+        style={{ width: "100%", height: "630px", overflow: "scroll" }}
       />
     </div>
   );
