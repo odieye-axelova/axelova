@@ -180,7 +180,7 @@ export default function CoachingPage() {
             <p className="section-subtitle">Passons à l&apos;action</p>
             <h2 className="section-title">Réservez votre séance découverte</h2>
             <p className="text-gray-500 mt-4 max-w-lg mx-auto">
-              30 minutes gratuites pour explorer votre situation et valider ensemble si notre collaboration est la bonne pour vous. Sans engagement.
+              60 minutes gratuites pour explorer votre situation et valider ensemble si notre collaboration est la bonne pour vous. Sans engagement.
             </p>
           </div>
 
