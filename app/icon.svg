@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Fond navy -->
+  <rect width="32" height="32" rx="6" fill="#0D1B3E"/>
+  <!-- Triangle extérieur -->
+  <polygon points="16,4 28,26 4,26" fill="none" stroke="#C9A84C" stroke-width="1" stroke-linejoin="round" opacity="0.4"/>
+  <!-- Triangle intérieur plein doré -->
+  <polygon points="16,9 25,23 7,23" fill="#C9A84C"/>
+  <!-- Barre du A -->
+  <line x1="10" y1="18" x2="22" y2="18" stroke="#0D1B3E" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Point doré au sommet -->
+  <circle cx="16" cy="9" r="1.8" fill="#F0C842"/>
+</svg>

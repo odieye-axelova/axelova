@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -14,33 +15,23 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const forceNavy = pathname.startsWith("/conseil");
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   const isActive = (href: string) =>
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || forceNavy ? "bg-navy-900/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5"
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-heading font-bold text-navy-900 text-lg">
-            A
-          </div>
-          <span className="font-heading font-bold text-xl text-white tracking-wide">
-            AXEL<span className="text-gold-400">OVA</span>
-          </span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-navy-900 border-b-2 border-gold-500 shadow-lg">
+      <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <Link href="/">
+          <Image
+            src="/logo.svg"
+            alt="AXELOVA"
+            width={200}
+            height={40}
+            priority
+            className="h-10 w-auto"
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6">

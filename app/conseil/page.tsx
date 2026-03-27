@@ -78,34 +78,27 @@ export default function ConseilPage() {
     <>
 
       {/* ── BANNIÈRE LANCEMENT ────────────────────────────────────────────────── */}
-      <div className="bg-gradient-to-r from-gold-500 to-gold-400 py-3 mt-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
-          <p className="text-navy-900 font-semibold text-sm">
-            🚀&nbsp; Activité de conseil en cours de lancement —&nbsp;
-            <Link href="/contact" className="underline underline-offset-2 hover:text-navy-700 transition-colors">
-              Prenez contact dès maintenant pour anticiper vos besoins
-            </Link>
-          </p>
-        </div>
-      </div>
+      
 
       {/* ── HERO ─────────────────────────────────────────────────────────────── */}
       <section className="bg-hero-pattern text-white py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-navy-950/40" />
-        <div className="relative max-w-6xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 bg-gold-500/20 border border-gold-500/30 rounded-full px-4 py-1.5 text-gold-300 text-sm font-medium mb-6">
-            <span>🌍</span>
-            <span>Conseil en Management de Projet & Programmes</span>
-          </div>
+        <div className="relative max-w-6xl mx-auto px-4 text-left">
+          <p className="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-4">
+            Conseil en Management de Projet & Programmes
+          </p>
           <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 leading-tight">
             Transformez vos projets<br />
             en <span className="text-gold-400">succès mesurables</span>
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mb-10 leading-relaxed">
             AXELOVA accompagne les organisations africaines et internationales dans la structuration,
             le pilotage et la performance de leurs projets et programmes à forts enjeux.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="inline-flex items-center gap-3 bg-gold-500/20 border border-gold-500/30 text-gold-300 px-6 py-3 rounded-full text-sm font-medium mb-8">
+            🚀 Activité de conseil en cours de lancement — <Link href="/contact" className="underline underline-offset-2 hover:text-gold-200 transition-colors">Prenez contact dès maintenant</Link>
+          </div>
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link href="/contact" className="btn-primary text-base px-8 py-3.5">
               Discutons de votre projet
             </Link>
@@ -230,7 +223,7 @@ export default function ConseilPage() {
       </section>
 
       {/* ── CTA FINAL ────────────────────────────────────────────────────────── */}
-      <section className="py-24 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900">
+      <section className="py-24 bg-gradient-to-br bg-navy-900">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <div className="w-16 h-16 rounded-2xl bg-gold-500/20 border border-gold-500/30 flex items-center justify-center text-3xl mx-auto mb-6">
             💼
@@ -251,7 +244,7 @@ export default function ConseilPage() {
               <li className="flex gap-2"><span className="text-gold-400 mt-0.5">→</span> Un transfert de compétences intégré à chaque étape</li>
             </ul>
           </div>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-start">
             <Link href="/contact" className="btn-primary text-base px-8 py-3.5">
               Nous contacter
             </Link>

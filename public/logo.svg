@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 70">
+  <!-- Triangle extérieur contour -->
+  <g transform="translate(40, 35)">
+    <polygon points="0,-33 28,17 -28,17" fill="none" stroke="#C9A84C" stroke-width="2" stroke-linejoin="round" opacity="0.5"/>
+    <!-- Triangle intérieur plein -->
+    <polygon points="0,-33 28,17 -28,17" fill="#C9A84C"/>
+    <!-- Barre du A -->
+    <line x1="-13" y1="4" x2="13" y2="4" stroke="#0D1B3E" stroke-width="4" stroke-linecap="round"/>
+    <!-- Découpe intérieure pour faire le A creux -->
+    <polygon points="0,-20 10,4 -10,4" fill="#0D1B3E" opacity="0.0"/>
+    <!-- Point doré au sommet -->
+    <circle cx="0" cy="-33" r="3.5" fill="#F0C842"/>
+  </g>
+  <!-- AXEL en blanc -->
+  <text x="86" y="46" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="white" letter-spacing="4">AXEL</text>
+  <!-- OVA en doré -->
+  <text x="248" y="46" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#C9A84C" letter-spacing="4">OVA</text>
+</svg>

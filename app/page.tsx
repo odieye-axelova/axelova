@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <>
       {/* ── HERO ── */}
-      <section className="relative min-h-screen flex items-center bg-hero-pattern overflow-hidden">
+      <section className="relative min-h-screen flex bg-hero-pattern overflow-hidden">
         {/* Décoration dorée */}
         <div className="absolute top-0 right-0 w-1/2 h-full opacity-5">
           <div className="absolute top-20 right-20 w-96 h-96 rounded-full bg-gold-400 blur-3xl" />
@@ -70,7 +70,7 @@ export default function Home() {
         {/* Ligne décorative gauche */}
         <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-transparent via-gold-500 to-transparent opacity-60" />
 
-        <div className="max-w-6xl mx-auto px-4 py-32 relative z-10">
+        <div className="max-w-6xl mx-auto px-4 pt-36 pb-32 relative z-10 w-full">
           <div className="max-w-3xl">
             <p className="text-gold-400 font-semibold text-sm uppercase tracking-widest mb-5">
               Coaching · Formation · Conseil
