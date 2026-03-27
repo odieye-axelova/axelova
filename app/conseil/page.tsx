@@ -75,10 +75,10 @@ const secteurs = [
 
 export default function ConseilPage() {
   return (
-    <main className="pt-20">
+    <>
 
       {/* ── BANNIÈRE LANCEMENT ────────────────────────────────────────────────── */}
-      <div className="bg-gradient-to-r from-gold-500 to-gold-400 py-3">
+      <div className="bg-gradient-to-r from-gold-500 to-gold-400 py-3 mt-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-navy-900 font-semibold text-sm">
             🚀&nbsp; Activité de conseil en cours de lancement —&nbsp;
@@ -262,6 +262,6 @@ export default function ConseilPage() {
         </div>
       </section>
 
-    </main>
+    </>
   );
 }

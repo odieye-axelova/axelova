@@ -1,6 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
   { href: "/", label: "Accueil" },
@@ -14,6 +15,8 @@ const links = [
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const forceNavy = pathname.startsWith("/conseil");
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -21,14 +24,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-navy-900/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5"
+        scrolled || forceNavy ? "bg-navy-900/95 backdrop-blur-md shadow-lg py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
           <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-gold-400 to-gold-600 flex items-center justify-center font-heading font-bold text-navy-900 text-lg">
             A
@@ -38,13 +43,16 @@ export default function Navbar() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-6">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="text-gray-300 hover:text-gold-400 text-sm font-medium transition-colors duration-200"
+              className={`text-sm font-medium transition-colors duration-200 relative pb-1 ${
+                isActive(l.href)
+                  ? "text-gold-400 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:bg-gold-400 after:rounded-full"
+                  : "text-gray-300 hover:text-gold-400"
+              }`}
             >
               {l.label}
             </Link>
@@ -54,7 +62,6 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile burger */}
         <button
           className="md:hidden text-white p-2"
           onClick={() => setOpen(!open)}
@@ -66,14 +73,17 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-navy-900 border-t border-navy-700 px-4 py-4 space-y-3">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className="block text-gray-300 hover:text-gold-400 py-2 font-medium"
+              className={`block py-2 font-medium transition-colors ${
+                isActive(l.href)
+                  ? "text-gold-400 border-l-2 border-gold-400 pl-3"
+                  : "text-gray-300 hover:text-gold-400"
+              }`}
               onClick={() => setOpen(false)}
             >
               {l.label}
